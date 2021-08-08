@@ -6,7 +6,7 @@
     <div>
       <p @click="hello">HELLO</p>
     </div>
-    <newcomp />
+    <newcomp :msg="count" />
   </div>
 </template>
 
@@ -19,7 +19,7 @@ import newcomp from "./newcomp.vue";
   },
 })
 export default class HelloWorld extends Vue {
-  count = 0;
+  count = 6;
   increment() {
     return this.count++;
   }
@@ -33,7 +33,7 @@ export default class HelloWorld extends Vue {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 h3 {
   margin: 40px 0 0;
 }
