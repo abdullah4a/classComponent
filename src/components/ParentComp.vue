@@ -5,9 +5,9 @@
     <button @click="increment">+</button>
     <div>
       <p @click="hello">HELLO</p>
-      {{ na }}
     </div>
     <newcomp :msg="count" @nameupdate="ChangeName($event)" />
+    {{ na }}
   </div>
 </template>
 
