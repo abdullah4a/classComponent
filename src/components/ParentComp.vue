@@ -5,8 +5,9 @@
     <button @click="increment">+</button>
     <div>
       <p @click="hello">HELLO</p>
+      {{ na }}
     </div>
-    <newcomp :msg="count" />
+    <newcomp :msg="count" @nameupdate="ChangeName($event)" />
   </div>
 </template>
 
@@ -19,7 +20,8 @@ import newcomp from "./newcomp.vue";
   },
 })
 export default class HelloWorld extends Vue {
-  count = 6;
+  count = 0;
+  na = "KP";
   increment() {
     return this.count++;
   }
@@ -28,6 +30,9 @@ export default class HelloWorld extends Vue {
   }
   hello() {
     alert("Hello to Class component \n Counter = " + this.count);
+  }
+  ChangeName(namex: string) {
+    this.na = namex;
   }
 }
 </script>
@@ -49,7 +54,7 @@ a {
   color: #42b983;
 }
 button {
-  padding: 3px;
+  padding: 3px 5px;
   margin: 5px;
 }
 </style>
