@@ -8,8 +8,10 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-@Component
-export default class newcomp extends Vue {
-  msg = 0;
-}
+@Component({
+  props: {
+    msg: { default: 0 },
+  },
+})
+export default class newcomp extends Vue {}
 </script>
